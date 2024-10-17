@@ -22,8 +22,8 @@ void setup(){
 void loop(){
   detected_val=analogRead(detect_pin); //
   if(detected_val>1){
-    detected_val=constrain(detected_val, 1, 1023);
-    detected_val=map(detected_val,1,sensing_limit,1,1023);
+    detected_val=constrain(detected_val, 1, 1023);//limiting the maximum as 1023
+    detected_val=map(detected_val,1,sensing_limit,1,1023);//again mapping 
     total-= readings[index];
     readings[index]=detected_val;
     total += readings[index];
